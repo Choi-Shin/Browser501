@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script>
+        $(function () {
+            //1. user_name에 포커스 강제 발생
+            $("#user_name").focus();
+            //2. user_id에 포커스 이동시 값 깨긋이
+            $("#user_id").focus(function () {
+                $(this).val('');
+            });
+            //3. user_id 포커스 사라질 시 "아이디 입력"나오게
+            $("#user_id").focusout(function() {
+                $(this).prop("placeholder","아이디 입력");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p><input type="text" name="user_name" id="user_name"></p>
+    <p><input type="text" name="user_id" id="user_id"></p>
+</body>
+
+</html>

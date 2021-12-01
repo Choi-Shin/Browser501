@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <title> DOM 객체 </title>
+</head>
+
+<body>
+   <h1 id="title">마우스 아웃</h1>
+   <a href="#" id="btn"><img src="images/btn_out.gif" alt="default상태"></a>
+   <p id="img_src"></p>
+   <script>
+      //<![CDATA[
+      var theBtn = document.getElementById("btn");
+      var s = document.getElementById("img_src");
+
+      //버튼위에 mouseover 되었을때
+
+      theBtn.onmouseover = function () {
+         document.getElementById("title").innerHTML = '마우스 오버';
+         theBtn.firstChild.src = "images/btn_over.gif";
+         s.firstChild.innerHTML = theBtn.firstChild.src;    
+      }
+//버튼위에 mouseout 되었을때(default상태), 추가적으로 버튼주소 추가하여 출력하기
+      theBtn.onmouseout = function () {
+         document.getElementById("title").innerHTML = '마우스 아웃';
+         theBtn.firstChild.src = "images/btn_out.gif";
+         s.firstChild.innerHTML = theBtn.firstChild.src; 
+      }
+//]]>
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Date객체 : 반드시 var date = new Date();<br>
+    String객체 var s = new String("홍길동");<br>
+    String객체 var s2 = "홍길동";<hr>
+
+    new Date()<br>
+    new Date(year, month, day, hours, minutes, seconds, milliseconds)<br>
+    new Date(milliseconds)<br>
+    new Date(date string)<br>
+
+
+<script>
+    var t = new Date();
+    document.write(t.getFullYear(), "<br>");
+    document.write(t.getMonth()+1,"<br>");
+    document.write(t.getDate(), "<br>");
+    document.write(t.getDay(), "<br>");
+
+    var t = new Date(2020,4,31);
+    document.write(t.getFullYear(), "<br>");
+    document.write(t.getMonth()+1,"<br>");
+    document.write(t.getDate(), "<br>");
+    document.write(t.getDay(), "<br>");
+</script>
+</body>
+</html>

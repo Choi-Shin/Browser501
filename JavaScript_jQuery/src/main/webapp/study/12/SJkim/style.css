@@ -1,0 +1,26 @@
+table, td, th {
+	color: white;
+    text-align: center;
+    background-color: #323232;
+	border: 1px solid #595959;
+	border-collapse : collapse;
+}
+
+.custom_calendar_table td {
+    width:50px;
+    height:50px;
+}
+
+.custom_calendar_table thead.cal_yyymm th {
+	font-size: 1.5em;
+    color: #FFB900;
+}
+
+.custom_calendar_table thead.cal_week th, tfoot.cal_move th{
+	height:50px;
+    color: white;
+}
+
+.custom_calendar_table tbody td:nth-child(1), thead.cal_week th:nth-child(1) {
+    color: red;
+}

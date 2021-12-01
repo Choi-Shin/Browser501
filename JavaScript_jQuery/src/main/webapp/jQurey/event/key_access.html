@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>//키보드의 접근성
+        $(function () {
+            $("#btn1").mouseover(function(){
+                alert("good");
+            });
+            $("#btn2").on("mouseover focus",function() {
+                alert("hello");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p><a href="#" id="btn1">버튼1</a></p>
+    <p><a href="#" id="btn2">버튼2</a></p>
+</body>
+
+</html>

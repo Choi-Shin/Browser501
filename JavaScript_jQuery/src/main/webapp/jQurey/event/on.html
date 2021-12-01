@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("a").on({
+                "mouseover focus": function () {
+                    $(this).css("color", "red");
+                },
+                "mouseout focusout": function () {
+                    $(this).css("color", "yellow");
+                }
+            });
+
+            $("h2").append("<a href='#'>'생성된 요소'</a>");
+
+            $("h2 a").on({
+                "mouseover focus": function () {
+                    $(this).css("color", "yellow");
+                },
+                "mouseout focusout": function () {
+                    $(this).css("color", "aqua");
+                }
+            })
+            $(document).on("mouseout blur", "h2 a", function () {
+                $(this).css("color", "aqua");
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h1><a href="#">버튼</a></h1>
+    <h2></h2>
+</body>
+
+</html>

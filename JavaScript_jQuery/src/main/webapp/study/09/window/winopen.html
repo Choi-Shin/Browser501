@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        function popup() {
+            window.open('winpopup.html', 'Web Browser', 'width=300px, height=371px,left=300,top=100,scrollbars=no,toolbars=no,location');
+        }
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        window.onload(screenSize());
+        function screenSize() {
+            document.write('<style>body {width :' + width + 'px; height:' + height + "px; margin: 0 auto;} a {margin: 0 auto;} </style>");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <a onclick="popup()">팝업창 보기</a>
+    </div>
+</body>
+
+</html>

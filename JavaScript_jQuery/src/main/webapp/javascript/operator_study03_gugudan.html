@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function some(a) {
+            for (var i = 2; i < 10; i++) {
+                if (i == a) {
+                    document.write("<hr>");
+                    document.write("****" + i + "단" + "****" + "<br>")
+                }
+                for (var j = 1; j < 10; j++) {
+                    if (i == a) {
+                        document.write(i + " X " + j + " = " + (i * j) + "<br>");
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    1. 구구단 작성<br><br>
+    <script>
+        for (var i = 2; i < 10; i++) {
+            document.write("****" + i + "단" + "****" + "<br>");
+            for (var j = 1; j < 10; j++) {
+                document.write(i + " X " + j + " = " + (i * j) + "<br>");
+            }
+            document.write("<hr>");
+        }
+    </script>
+    <hr>
+    2. x단만 출력
+    <script>
+        var so = prompt("몇 단을 출력하겠습니까?");
+        var some = some(so);
+    </script>
+
+    <script>
+        var i=1;
+        document.write("5단<hr>");
+        while(i <= 9) {
+            document.write("5 x "+i+" = "+(i*5),"<br>");
+            i++;
+        }
+    </script>
+</body>
+</html>

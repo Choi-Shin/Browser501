@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0104)file:///C:/Users/PC/Downloads/JavaScript_jQuery-master/src/main/webapp/javascript/study/07/calender.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2021년 달력</title>
+    <script>
+        var now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth();
+        var date = now.getDate();
+        // 시간을 읽어와서 오전/오후로 브라우저에 보여줄 수 있게 해줍니다.
+        function get_Time() {
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var ampm = "";
+
+            if (hours < 12) {
+                ampm = "오전 ";
+            } else {
+                ampm = "오후 ";
+            }
+            hours = (hours == 0) ? 12 : hours;
+
+            if (minutes < 10) {
+                minutes = "0" + minutes;
+            }
+            return ampm + "\n" + hours + ":" + minutes;
+        }
+        // 년과 달을 받아서 마지막 일을 알아 냅니다.
+        function lastDate(year, month) {
+            var last = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+            //해당년도가 400의 배수일 때는 윤년이지만 100의 배수일 때는 평년. 나머지 4의 배수만 윤년.
+            if ((year % 400 == 0) || (year % 4 == 0) && (year % 100 != 0)) {
+                last[1] = 29;
+                return last[month];
+            } else {
+                return last[month];
+            }
+        }
+        function param() {
+            var firstDay = new Date(year, month, 1).getDay();
+            var last = lastDate(year, month);
+            var a = drawCal(firstDay, last, date, year, month);
+            return a;
+        }
+        // table태그를 이용하여 달력을 만들어 줍니다.
+        function drawCal(firstDay, lastDate, date, year, monthName) {
+            alert("오늘의 달력과 현재시간을 보여주는 페이지 입니다.");
+            var title = year + "년 " + (monthName + 1) + "월";
+            var table = "<table>";
+            var text = "";
+            table += "<caption style='background-color: #eef6f1; color:navy; font-size:80px; font-weight:bold'>" + title + "</caption>";
+            table += "<colgroup>";
+            for (var i = 0; i < 7; i++) {
+                table += "<col width=100px>"
+            }
+            table += "</colgroup>";
+            var openCol = "<td bgcolor=#ffefff>";
+            openCol += "<font color=darkblue>";
+            var closeCol = "</font></td>";
+            text += table + "<tr align=center valign=center>";
+            var weekDay = new Array("일", "월", "화", "수", "목", "금", "토");
+            // 달력의 일, 월, 화, 수, 목, 금, 토, 일을 출력합니다.
+            for (var i = 0; i < 7; i++) {
+                text += openCol + weekDay[i] + closeCol;
+            }
+            text += "</tr>";
+            // 달력 표를 만들어 줍니다.
+            var row = Math.ceil((lastDate + firstDay)/ 7);
+            var printDate = 1;
+            for (var a = 0; a < row; a++) {
+                text += "<tr align=right valign=top bgcolor=#ffefee>";
+                for (var b = 0; b < 7; b++) {
+                    if (printDate == date) {
+                        text += "<td style='color:red'>" + printDate + "<font color=violet size=2px>" +"<br><br><br>" +get_Time() + "</font>";
+                        printDate++;
+                    }else if ((a == 0 && firstDay > b) || lastDate < printDate) {
+                        text += "<td bgcolor=#f4f4f4>&nbsp;";
+                    } else {
+                        text += "<td>" + printDate;
+                        printDate++;
+                    }
+                    text += "</td>";
+                }
+                text += "</tr>";
+            }
+            text += "</table>";
+            return text;
+        }
+        document.write(param());
+    </script></head><body><table><caption style="background-color: #eef6f1; color:navy; font-size:80px; font-weight:bold">2021년 11월</caption><colgroup><col width="100px"><col width="100px"><col width="100px"><col width="100px"><col width="100px"><col width="100px"><col width="100px"></colgroup><tbody><tr align="center" valign="center"><td bgcolor="#ffefff"><font color="darkblue">일</font></td><td bgcolor="#ffefff"><font color="darkblue">월</font></td><td bgcolor="#ffefff"><font color="darkblue">화</font></td><td bgcolor="#ffefff"><font color="darkblue">수</font></td><td bgcolor="#ffefff"><font color="darkblue">목</font></td><td bgcolor="#ffefff"><font color="darkblue">금</font></td><td bgcolor="#ffefff"><font color="darkblue">토</font></td></tr><tr align="right" valign="top" bgcolor="#ffefee"><td bgcolor="#f4f4f4">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr align="right" valign="top" bgcolor="#ffefee"><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr><tr align="right" valign="top" bgcolor="#ffefee"><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr><tr align="right" valign="top" bgcolor="#ffefee"><td>21</td><td>22</td><td>23</td><td>24</td><td style="color:red">25<font color="violet" size="2px"><br><br><br>오전 
+9:32</font></td><td>26</td><td>27</td></tr><tr align="right" valign="top" bgcolor="#ffefee"><td>28</td><td>29</td><td>30</td><td bgcolor="#f4f4f4">&nbsp;</td><td bgcolor="#f4f4f4">&nbsp;</td><td bgcolor="#f4f4f4">&nbsp;</td><td bgcolor="#f4f4f4">&nbsp;</td></tr></tbody></table>
+    <style>
+
+        td {
+            height : 100px;
+        }
+        table {
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 700px;
+        }
+    </style>
+
+
+
+
+
+</body></html>

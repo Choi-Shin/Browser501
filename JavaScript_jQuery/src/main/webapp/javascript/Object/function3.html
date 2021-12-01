@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    id,pw를 입력 받아서 비교한 후 (abcd/1234)
+    일치하면 "id님 방문을 환영합니다."
+    불일치하면 "잘못된 비밀번호 또는 존재하지 않는 아이디입니다."
+
+    <!-- <form>
+        <label for="id">
+            <input type="text" name="id">
+        </label>
+        <label for="pw">
+            <input type="password" name="pw">
+        </label>
+        <button onclick="login(a, b)">로그인</button>
+    </form> -->
+    <script>
+        var user_id = prompt("아이디를 입력해주세요.");
+        var user_pw = prompt("비밀번호를 입력해주세요.");
+        login(user_id,user_pw);
+        function login(a, b) {
+            if (a == "abcd" && b == "1234") {
+                alert(a + "님 방문을 환영합니다.");
+            } else {
+                alert("잘못된 비밀번호 또는 존재하지 않는 아이디입니다.");
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>엘리먼트에 접근해서 스타일 지정하기 </title>
+    <style>
+
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        /* selector와 addClass( )만을 사용 */
+
+        $(document).ready(function () {
+            //div, span, id, class각각에 대한 css 추가하기
+            $("#simpletext1").css({"color":"red", "font-size":"40px"});
+            $(".simpletext1").css({"background-color":"yellow", "font-style":"italic"});
+            $("#simpletext2").css("color", "red");
+            $("#simpletext3").css("background-color","yellow");
+        });
+    </script>
+</head>
+
+<body>
+    <span id="simpletext1">simple</span>
+    <div class="simpletext1">jQuery</div>
+    <span id="simpletext2">basic</span>
+    <div id="simpletext3">example</div>
+</body>
+</html>

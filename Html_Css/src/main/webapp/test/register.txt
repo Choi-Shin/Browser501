@@ -1,0 +1,88 @@
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        body {
+            margin: 0 auto;
+            font-family: Dotum,'돋움',Helvetica,sans-serif;
+        }
+        #wrapper {
+            width: 800px;
+        }
+        .info{
+            margin-left: 300px;
+            margin-right: 300px;
+            margin-top: 50px;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            text-align: center;
+            width: 200px;
+            height: 30px;
+        }
+        
+        input {
+            display: block;
+            
+        }
+    </style>
+    <script type="text/javascript">
+        function test() {
+          var p1 = document.getElementById('password').value;
+          var p2 = document.getElementById('passwordcheck').value;
+          if( p1 != p2 ) {
+            alert("비밀번호가 일치 하지 않습니다");
+            return false;
+          } else{
+            alert("비밀번호가 일치합니다");
+            return true;
+          }
+        }
+      </script>
+</head>
+<body>
+    <div id="wrapper">
+    <header>
+        <div class="info">
+        <p>MEMBER INFO</p>
+        </div>
+    </header>
+    <form>
+        <label for="id">*ID</label>
+        <input type="text" id="id" maxlength="14">
+        <label for="name">*이름</label>
+        <input type="text" id="name" required="">
+        <label for="password">*비밀번호</label>
+        <input type="text" id="password" maxlength="15" required="">
+        <label for="password">*비밀번호확인</label>
+        <input type="text" id="passwordcheck" maxlength="15" required="">
+        <label for="birthday">*생일</label>
+        <input type="number" id="year" required="">년
+        <input type="number" id="month" min="1" max="12" required="">월
+        <input type="number" id="date" min="1" max="31" required="">일
+        <label for="email">*E-mail</label>
+        <input type="email" id="email" required="">
+        <label for="phone">*휴대폰</label>
+        <input type="tel" id="phone" required="">
+        <label for="address">*주소</label>
+        <input type="address" id="address" required="">
+        <label for="detail">*상세주소</label>
+        <input type="text" id="detail">
+    </form>
+    <form><input type="button" id="modify" value="수정">
+        <input type="button" id="list" value="목록"> </form>
+    </div>
+
+
+
+<!--
+조건1) HTML, CSS 문법이 올바르게 작성되어야 합니다.
+조건2) 입력 항목은 최소 5개 이상이어야 합니다.
+조건3) ID, 이름, 비밀번호는 필수 항목이며, 아이디는 14자, 
+      비밀번호는 15자 이하여야 합니다.  
+      HTML이나 JavaScript 둘 중 어느 것으로 처리하든 
+      상관없습니다.
+조건4) 모든 항목에 최소 1개 이상의 CSS 문법이 들어가야 합니다. 어떤 디자인을 채용하는가는 자유입니다.
+조건5) BootStrap을 이용한 디자인 요소 부여 또한 가능합니다.
+* 예시 (동일한 항목을 적용해도 괜찮습니다.) 
+--></body></html>

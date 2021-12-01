@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    문자 객체 생성<br>
+    <script>
+        var t = new String("hello JavaScript!");
+    </script>
+    <script>
+        var str = "Hello Thank you good luck to you";//문자 객체 생성
+        document.write(str[16] + "<br>");
+        document.write(str.charAt(16) + "<br>");
+        document.write(str.indexOf("you") + "<br>");
+        document.write(str.indexOf("you", 16) + "<br>");
+        document.write(str.lastIndexOf("you", 25) + "<br>")
+        document.write(str.match("luck") + "<br>");
+        document.write(str.search("luck")+ "<br>");
+        document.write(str.substring(6,12) + "<br>");
+        document.write(str.substr(21,4) + "<br>");
+    </script>
+</body>
+
+</html>

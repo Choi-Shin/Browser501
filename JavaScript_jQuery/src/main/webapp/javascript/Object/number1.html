@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var y = new Number(123);
+    var y2 = 123;
+
+    var num1 = 3.456789;
+    var num2 = 700000;
+    var num3 = "30.5px";
+    var num4 = 40;
+
+    document.write("표현 가능한 가장 큰 수: ", Number.MAX_VALUE, "<hr>");
+    document.write("숫자가 아닌 경우: ", Number.NaN, "<hr>");
+    document.write("무한대: ", Number.POSITIVE_INFINITY, "<hr>");
+    document.write("무한대: ", Number.POSITIVE_INFINITY, "<hr>");
+    document.write(num2.toExponential(1), "<hr>");
+    document.write(num1.toFixed(2), "<hr>");
+    document.write(num1.toPrecision(2), "<hr>");
+    document.write(num1.toString(), "<hr>");
+    document.write(num4.valueOf(), "<hr>");
+    document.write(parseInt(num3), "<hr>");
+    document.write(parseFloat(num3), "<hr>");
+    
+
+    let x = 123;
+    document.write(x.toString());
+    (123).toString();
+    (100+23).toString();
+    
+    document.write(y==y2);
+</script>  
+</body>
+</html>

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* css 주석 */
+
+body {
+  background-color: pink;
+}
+
+h1, p {
+  color: blue;
+  margin-left: 20px;
+}
+p {
+	background-color: yellow;
+}

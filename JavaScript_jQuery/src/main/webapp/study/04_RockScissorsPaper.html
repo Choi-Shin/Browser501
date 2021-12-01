@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 수학객체 </title>
+    <script>
+        document.addEventListener("DOMContentLoaded", rsp());
+        function rsp() {
+            //1부터 3까지 난수(정수)를 발생(컴퓨터 가위(1), 바위(2), 보(3))
+            var computer = Math.ceil(Math.random()*3);
+            /*난수를 이용해 컴퓨터 가위 바위 보 이미지 출력*/
+            document.write("<img src='images/math_img_"+computer+".jpg'>");
+            var user = prompt("가위, 바위, 보 중 선택하세요.");
+            switch (user) {
+                case "가위":user = 1; break;
+                case "바위":user = 2; break;
+                case "보":user = 3; break;
+                default: alert("잘못된 입력입니다."); location.reload(true);
+            }
+             //사용자가 낸 값과 컴퓨터의 값이 일치하는지 조건검사.
+            if (user == computer) {
+                setTimeout(function(){alert("맞췄습니다! 축하합니다!!")},1000);
+            } else {
+                setTimeout(function(){alert("틀렸네요! 다음 기회 또 도전하세요!!")},1000);
+            }
+        }   
+    </script>
+</head>
+<body>
+</body>
+</html>
